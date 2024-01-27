@@ -1,4 +1,5 @@
 class CredentialsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_credential, only: %i[ show edit update destroy show_password hide_password fetch_password]
   before_action :check_user_role, only: %i[create update destroy]
 
